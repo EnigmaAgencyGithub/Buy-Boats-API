@@ -135,7 +135,9 @@
 		let boatTraderUrl = 'https://www.boattrader.com/boat/';
 		boatTraderUrl = `${boatTraderUrl}${
 			activeBoat.ModelYear
-		}-${activeBoat.Model.replace(' ', '-')}-${activeBoat.DocumentID}`;
+		}-${encodeURIComponent(activeBoat.Model.replace(' ', '-'))}-${
+			activeBoat.DocumentID
+		}`;
 
 		return boatTraderUrl;
 	}
