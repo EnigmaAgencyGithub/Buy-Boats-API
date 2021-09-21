@@ -65,11 +65,12 @@
 			section.appendChild(container);
 
 			activePendingBoats.forEach((activeBoat) => {
-				let cardContainer = buildCardContainer(activeBoat);
-				buildCardBody(cardContainer, activeBoat);
-				buildCardFooter(cardContainer, activeBoat);
-
-				row.appendChild(cardContainer);
+				if (activeBoat) {
+					let cardContainer = buildCardContainer(activeBoat);
+					buildCardBody(cardContainer, activeBoat);
+					buildCardFooter(cardContainer, activeBoat);
+					row.appendChild(cardContainer);
+				}
 			});
 
 			shadow.appendChild(section);
