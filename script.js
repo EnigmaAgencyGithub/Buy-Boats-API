@@ -76,7 +76,7 @@
 						console.error(error);
 					}
 				}
-					// try catch 'Call for pricing'
+				// try catch 'Call for pricing'
 			});
 
 			shadow.appendChild(section);
@@ -110,7 +110,11 @@
 
 		let price = document.createElement('div');
 		price.classList.add('text-center', 'text-primary');
-		price.innerHTML = '$' + activeBoat.NormPrice.toLocaleString('en-US');
+		if (activeBoat.NormPrice) {
+			price.innerHTML = '$' + activeBoat.NormPrice.toLocaleString('en-US');
+		} else {
+			price.innerHTML = 'Call For Pricing';
+		}
 		salesStatus.prepend(boatTitle);
 		cardBody.appendChild(salesStatus);
 		salesStatus.appendChild(price);
