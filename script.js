@@ -66,8 +66,14 @@
 
 			activePendingBoats.forEach((activeBoat) => {
 				if (activeBoat) {
-					let cardContainer = buildCardContainer(activeBoat);
-					buildCardBody(cardContainer, activeBoat);
+					// try catch
+					try {
+						let cardContainer = buildCardContainer(activeBoat);
+						buildCardBody(cardContainer, activeBoat);
+					} catch (error) {
+						console.error(error);
+					}
+					// try catch 'Call for pricing'
 					buildCardFooter(cardContainer, activeBoat);
 					row.appendChild(cardContainer);
 				}
