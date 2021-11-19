@@ -70,13 +70,13 @@
 					try {
 						let cardContainer = buildCardContainer(activeBoat);
 						buildCardBody(cardContainer, activeBoat);
+						buildCardFooter(cardContainer, activeBoat);
+						row.appendChild(cardContainer);
 					} catch (error) {
 						console.error(error);
 					}
-					// try catch 'Call for pricing'
-					buildCardFooter(cardContainer, activeBoat);
-					row.appendChild(cardContainer);
 				}
+					// try catch 'Call for pricing'
 			});
 
 			shadow.appendChild(section);
